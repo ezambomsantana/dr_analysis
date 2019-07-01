@@ -9,6 +9,7 @@ from sklearn.linear_model import LinearRegression
 
 events = pd.read_csv('events.csv', sep = ';', header=None, names=['real_hour', 'real_minute', 'time','car', 'final_link', 'total_time','total_distance'])
 
+print(events['total_time'].mean())
 events['real_minute'] = pd.to_numeric(events['real_minute'])
 events['total_time'] = pd.to_numeric(events['total_time'])
 events['inicio'] = events['real_minute'] - events['total_time']
@@ -62,16 +63,16 @@ events_mean = events_mean[['interval', 'total_time']].dropna()
 events_mean.plot.line(x='interval', y='total_time')
 plt.savefig('img/time.png')
 
-par = events[events['car'].str.contains("paraiso_dr")]
-cons = events[events['car'].str.contains("consolacao_dr")]
+par = events[events['car'].str.contains("paraiso")]
+cons = events[events['car'].str.contains("consolacao")]
 
 print(par['interval'].size)
 print(cons['interval'].size)
 
 par['interval'] = pd.to_numeric(par['interval'])
-par.plot.scatter(x='real_minute', y='total_time')
+par.plot.line(x='real_minute', y='total_time')
 plt.savefig('img/time_par.png')
 
 cons['interval'] = pd.to_numeric(cons['interval'])
-cons.plot.scatter(x='real_minute', y='total_time')
+cons.plot.line(x='real_minute', y='total_time')
 plt.savefig('img/time_cons.png')

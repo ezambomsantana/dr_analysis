@@ -19,13 +19,6 @@ for x in range(0,21):
     data.append([x * 5, events['total_time'].mean(), events['total_time'].std()/10])
 
 df = pd.DataFrame(data, columns = ['scenario', 'mean_travel', 'std_travel']) 
-df.mean_travel = df.mean_travel.astype(int)
-df.std_travel = df.std_travel.astype(int)
-df.scenario = df.scenario.astype(int)
-print(df)
-
-
-
 ax = df.plot(
     x='scenario',
     y='mean_travel',
@@ -35,7 +28,6 @@ ax = df.plot(
     title='Travel time (s) vs. DR ratio (%)',
     grid=True,
 )
-
 
 cet_mean = 662
 cet_std = 25

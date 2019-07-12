@@ -49,7 +49,7 @@ ax = df2.plot(
     marker='o', 
     yerr='std_travel',
     ylim=(0, None),
-    title='Travel time (s) vs. DR ratio (%)',
+    title='Travel time (s) vs. AV ratio (%)',
     grid=True,
 )
 
@@ -59,7 +59,7 @@ ax = df3.plot(ax=ax,
     marker='o', 
     yerr='std_travel',
     ylim=(0, None),
-    title='Travel time (s) vs. DR ratio (%)',
+    title='Travel time (s) vs. AV ratio (%)',
     grid=True,
 )
 
@@ -84,7 +84,7 @@ ax = df2.plot(
     marker='o', 
     yerr='std_travel',
     ylim=(0, None),
-    title='Travel time (s) vs. DR ratio (%)',
+    title='Travel time (s) vs. AV ratio (%)',
     grid=True,
 )
 
@@ -94,7 +94,7 @@ ax = df3.plot(ax=ax,
     marker='o', 
     yerr='std_travel',
     ylim=(0, None),
-    title='Travel time (s) vs. DR ratio (%)',
+    title='Travel time (s) vs. AV ratio (%)',
     grid=True,
 )
 
@@ -120,7 +120,7 @@ ax = df2.plot(
     marker='o', 
     yerr='std_travel',
     ylim=(0, None),
-    title='Travel time (s) vs. DR ratio (%)',
+    title='Travel time (s) vs. AV ratio (%)',
     grid=True,
 )
 
@@ -130,7 +130,7 @@ ax = df3.plot(ax=ax,
     marker='o', 
     yerr='std_travel',
     ylim=(0, None),
-    title='Travel time (s) vs. DR ratio (%)',
+    title='Travel time (s) vs. AV ratio (%)',
     grid=True,
 )
 

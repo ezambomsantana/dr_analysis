@@ -12,7 +12,6 @@ data3 = []
 
 for x in range(0,21):
     file1 = 'scenario2/volume' + str(x) + '/events.xml'
-    print(file1)
     events = pd.read_csv(file1, sep = ';', header=None, names=['real_hour', 'real_minute', 'time','car', 'final_link', 'total_time','total_distance'])
 
     print(events['total_time'].mean())
@@ -21,7 +20,6 @@ for x in range(0,21):
 
 for x in range(0,21):
     file1 = 'scenario3/volume' + str(x) + '/events.xml'
-    print(file1)
     events = pd.read_csv(file1, sep = ';', header=None, names=['real_hour', 'real_minute', 'time','car', 'final_link', 'total_time','total_distance'])
 
     print(events['total_time'].mean())

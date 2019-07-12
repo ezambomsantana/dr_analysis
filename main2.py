@@ -70,7 +70,9 @@ ax.hlines(y=cet_mean, xmin=0, xmax=100)
 ax.hlines(y=[cet_mean+2*cet_std, cet_mean-2*cet_std], xmin=0, xmax=100, linestyle='--')
 
 ax.legend(['Mean, no DR', '95% CI, no DR', 'Mean, Scenario 2', 'Mean Scenario 3'])
-plt.show()
+
+plt.savefig("results/total.png", bbox_inches='tight', pad_inches=0.0)
+plt.close()
 
 
 df2 = pd.DataFrame(data_dr2, columns = ['scenario', 'mean_travel', 'std_travel']) 
@@ -103,7 +105,9 @@ ax.hlines(y=cet_mean, xmin=0, xmax=100)
 ax.hlines(y=[cet_mean+2*cet_std, cet_mean-2*cet_std], xmin=0, xmax=100, linestyle='--')
 
 ax.legend(['Mean, no DR', '95% CI, no DR', 'Mean, Scenario 2', 'Mean Scenario 3'])
-plt.show()
+
+plt.savefig("results/dr.png", bbox_inches='tight', pad_inches=0.0)
+plt.close()
 
 
 
@@ -137,4 +141,5 @@ ax.hlines(y=cet_mean, xmin=0, xmax=100)
 ax.hlines(y=[cet_mean+2*cet_std, cet_mean-2*cet_std], xmin=0, xmax=100, linestyle='--')
 
 ax.legend(['Mean, no DR', '95% CI, no DR', 'Mean, Scenario 2', 'Mean Scenario 3'])
-plt.show()
+plt.savefig("results/non_dr.png", bbox_inches='tight', pad_inches=0.0)
+plt.close()

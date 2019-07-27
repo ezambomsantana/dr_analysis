@@ -22,37 +22,37 @@ data_non_dr4 = []
 for x in range(0,21):
     file1 = 'scenario2/volume' + str(x) + '/events.xml'
     events = pd.read_csv(file1, sep = ';', header=None, names=['real_hour', 'real_minute', 'time','car', 'final_link', 'total_time','total_distance'])
-    data2.append([x * 5, events['total_time'].mean(), events['total_time'].std()/10])
+    data2.append([x * 5, events['total_time'].mean(), events['total_time'].std()/8])
 
     events_dr = events[events['car'].str.contains("dr")] 
     events_non_dr = events[~events['car'].str.contains("dr")] 
     
-    data_dr2.append([x * 5, events_dr['total_time'].mean(), events_dr['total_time'].std()/10])
-    data_non_dr2.append([x * 5, events_non_dr['total_time'].mean(), events_non_dr['total_time'].std()/10])
+    data_dr2.append([x * 5, events_dr['total_time'].mean(), events_dr['total_time'].std()/8])
+    data_non_dr2.append([x * 5, events_non_dr['total_time'].mean(), events_non_dr['total_time'].std()/8])
 
 
 
 for x in range(0,21):
     file1 = 'scenario3/volume' + str(x) + '/events.xml'
     events = pd.read_csv(file1, sep = ';', header=None, names=['real_hour', 'real_minute', 'time','car', 'final_link', 'total_time','total_distance'])
-    data3.append([x * 5, events['total_time'].mean(), events['total_time'].std()/10])    
+    data3.append([x * 5, events['total_time'].mean(), events['total_time'].std()/8])    
 
     events_dr = events[events['car'].str.contains("dr")] 
     events_non_dr = events[~events['car'].str.contains("dr")] 
     
-    data_dr3.append([x * 5, events_dr['total_time'].mean(), events_dr['total_time'].std()/10])
-    data_non_dr3.append([x * 5, events_non_dr['total_time'].mean(), events_non_dr['total_time'].std()/10])
+    data_dr3.append([x * 5, events_dr['total_time'].mean(), events_dr['total_time'].std()/8])
+    data_non_dr3.append([x * 5, events_non_dr['total_time'].mean(), events_non_dr['total_time'].std()/8])
 
 for x in range(0,21):
     file1 = 'scenario4/volume' + str(x) + '/events.xml'
     events = pd.read_csv(file1, sep = ';', header=None, names=['real_hour', 'real_minute', 'time','car', 'final_link', 'total_time','total_distance'])
-    data4.append([x * 5, events['total_time'].mean(), events['total_time'].std()/10])    
+    data4.append([x * 5, events['total_time'].mean(), events['total_time'].std()/8])    
 
     events_dr = events[events['car'].str.contains("dr")] 
     events_non_dr = events[~events['car'].str.contains("dr")] 
     
-    data_dr4.append([x * 5, events_dr['total_time'].mean(), events_dr['total_time'].std()/10])
-    data_non_dr4.append([x * 5, events_non_dr['total_time'].mean(), events_non_dr['total_time'].std()/10])
+    data_dr4.append([x * 5, events_dr['total_time'].mean(), events_dr['total_time'].std()/8])
+    data_non_dr4.append([x * 5, events_non_dr['total_time'].mean(), events_non_dr['total_time'].std()/8])
 
 df2 = pd.DataFrame(data2, columns = ['scenario', 'mean_travel', 'std_travel']) 
 df3 = pd.DataFrame(data3, columns = ['scenario', 'mean_travel', 'std_travel']) 

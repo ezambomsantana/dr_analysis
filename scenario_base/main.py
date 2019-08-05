@@ -7,7 +7,7 @@ import networkx as nx
 import numpy as np
 from sklearn.linear_model import LinearRegression
 
-events = pd.read_csv('events.csv', sep = ';', header=None, names=['real_hour', 'real_minute', 'time','car', 'final_link', 'total_time','total_distance'])
+events = pd.read_csv('events2.csv', sep = ';', header=None, names=['real_hour', 'real_minute', 'time','car', 'final_link', 'total_time','total_distance'])
 
 print(events['total_time'].mean())
 

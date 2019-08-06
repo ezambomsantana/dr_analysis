@@ -22,13 +22,26 @@ data_non_dr3 = []
 data_non_dr4 = []
 data_non_dr5 = []
 
+data = []
+
+for x in range(2,11):
+    file1 = 'scenario1/volume' + str(x) +  '-0/events.xml'
+    events = pd.read_csv(file1, sep = ';', header=None, names=['real_hour', 'real_minute', 'time','car', 'final_link', 'total_time','total_distance'])
+    data.append([events['total_time'].mean()])
+       
+df = pd.DataFrame(data, columns = ['mean_travel']) 
+        
+print(df['mean_travel'].mean())
+print(df['mean_travel'].std())
+
 for y in range(0,11):
 
-    data_int = []
-    data_int_dr = []
-    data_int_non = []
 
     for x in range(0,21):
+
+        data_int = []
+        data_int_dr = []
+        data_int_non = []
         file1 = 'scenario2/volume' + str(y) + '-' + str(x) + '/events.xml'
         events = pd.read_csv(file1, sep = ';', header=None, names=['real_hour', 'real_minute', 'time','car', 'final_link', 'total_time','total_distance'])
         data_int.append([x * 5, events['total_time'].mean()])
@@ -50,11 +63,11 @@ for y in range(0,11):
 
 for y in range(0,11):
 
-    data_int = []
-    data_int_dr = []
-    data_int_non = []
-
     for x in range(0,21):
+
+        data_int = []
+        data_int_dr = []
+        data_int_non = []
         file1 = 'scenario3/volume' + str(y) + '-' + str(x) + '/events.xml'
         events = pd.read_csv(file1, sep = ';', header=None, names=['real_hour', 'real_minute', 'time','car', 'final_link', 'total_time','total_distance'])
         data_int.append([x * 5, events['total_time'].mean()])
@@ -75,11 +88,12 @@ for y in range(0,11):
 
 for y in range(0,11):
 
-    data_int = []
-    data_int_dr = []
-    data_int_non = []
 
     for x in range(0,21):
+
+        data_int = []
+        data_int_dr = []
+        data_int_non = []
         file1 = 'scenario4/volume' + str(y) + '-' + str(x) + '/events.xml'
         events = pd.read_csv(file1, sep = ';', header=None, names=['real_hour', 'real_minute', 'time','car', 'final_link', 'total_time','total_distance'])
         data_int.append([x * 5, events['total_time'].mean()])
@@ -100,11 +114,12 @@ for y in range(0,11):
 
 for y in range(0,11):
 
-    data_int = []
-    data_int_dr = []
-    data_int_non = []
 
     for x in range(0,21):
+
+        data_int = []
+        data_int_dr = []
+        data_int_non = []
         file1 = 'scenario5/volume' + str(y) + '-' + str(x) + '/events.xml'
         events = pd.read_csv(file1, sep = ';', header=None, names=['real_hour', 'real_minute', 'time','car', 'final_link', 'total_time','total_distance'])
         data_int.append([x * 5, events['total_time'].mean()])
@@ -188,8 +203,8 @@ ax = df5.plot(ax=ax,
     grid=True,
 )
 
-cet_mean = 810
-cet_std = 25
+cet_mean = 850
+cet_std = 53
 
 ax.hlines(y=cet_mean, xmin=0, xmax=100)
 ax.hlines(y=[cet_mean+2*cet_std, cet_mean-2*cet_std], xmin=0, xmax=100, linestyle='--')
@@ -272,7 +287,6 @@ plt.savefig("results/dr.png", bbox_inches='tight', pad_inches=0.0)
 plt.close()
 
 
-
 df2 = pd.DataFrame(data_non_dr2, columns = ['scenario', 'mean_travel']) 
 df2 = pd.concat([df2.groupby(['scenario']).mean(), df2.groupby(['scenario']).std()], axis=1)
 df2 = df2.reset_index()
@@ -284,12 +298,14 @@ df3 = pd.concat([df3.groupby(['scenario']).mean(), df3.groupby(['scenario']).std
 df3 = df3.reset_index()
 df3.columns = ['scenario','mean_travel', 'std_travel']
 
+print(df3)
 
 df4 = pd.DataFrame(data_non_dr4, columns = ['scenario', 'mean_travel']) 
 df4 = pd.concat([df4.groupby(['scenario']).mean(), df4.groupby(['scenario']).std()], axis=1)
 df4 = df4.reset_index()
 df4.columns = ['scenario','mean_travel', 'std_travel']
 
+print(df4)
 
 
 df5 = pd.DataFrame(data_non_dr5, columns = ['scenario', 'mean_travel']) 

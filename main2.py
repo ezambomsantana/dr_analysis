@@ -209,7 +209,9 @@ cet_std = 53
 ax.hlines(y=cet_mean, xmin=0, xmax=100)
 ax.hlines(y=[cet_mean+2*cet_std, cet_mean-2*cet_std], xmin=0, xmax=100, linestyle='--')
 
-ax.legend(['Mean, no DR', '95% CI, no DR', 'Mean, Scenario 2', 'Mean Scenario 3', 'Mean Scenario 4', 'Mean Scenario 5'])
+ax.legend(['Mean, no AVs', '95% CI, no AVs', 'Mean, Scenario 2', 'Mean Scenario 3', 'Mean Scenario 4', 'Mean Scenario 5'])
+ax.set_xlabel("AV ratio")
+ax.set_ylabel("Travel Time (s)")
 
 plt.savefig("results/total.png", bbox_inches='tight', pad_inches=0.0)
 plt.close()
@@ -281,7 +283,9 @@ ax = df5.plot(ax=ax,
 ax.hlines(y=cet_mean, xmin=0, xmax=100)
 ax.hlines(y=[cet_mean+2*cet_std, cet_mean-2*cet_std], xmin=0, xmax=100, linestyle='--')
 
-ax.legend(['Mean, no DR', '95% CI, no DR', 'Mean, Scenario 2', 'Mean Scenario 3', 'Mean Scenario 4', 'Mean Scenario 5'])
+ax.legend(['Mean, no AVs', '95% CI, no AVs', 'Mean, Scenario 2', 'Mean Scenario 3', 'Mean Scenario 4', 'Mean Scenario 5'])
+ax.set_xlabel("AV ratio")
+ax.set_ylabel("Travel Time (s)")
 
 plt.savefig("results/dr.png", bbox_inches='tight', pad_inches=0.0)
 plt.close()
@@ -357,6 +361,9 @@ ax = df5.plot(ax=ax,
 ax.hlines(y=cet_mean, xmin=0, xmax=100)
 ax.hlines(y=[cet_mean+2*cet_std, cet_mean-2*cet_std], xmin=0, xmax=100, linestyle='--')
 
-ax.legend(['Mean, no DR', '95% CI, no DR', 'Mean, Scenario 2', 'Mean Scenario 3', 'Mean Scenario 4', 'Mean Scenario 5'])
+ax.legend(['Mean, no AVs', '95% CI, no AVs', 'Mean, Scenario 2', 'Mean Scenario 3', 'Mean Scenario 4', 'Mean Scenario 5'])
+ax.set_xlabel("AV ratio")
+ax.set_ylabel("Travel Time (s)")
+
 plt.savefig("results/non_dr.png", bbox_inches='tight', pad_inches=0.0)
 plt.close()

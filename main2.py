@@ -5,7 +5,6 @@ import sys
 import re
 import networkx as nx
 import numpy as np
-from sklearn.linear_model import LinearRegression
 
 data2 = []
 data3 = []
@@ -145,23 +144,28 @@ df2 = pd.concat([df2.groupby(['scenario']).mean(), df2.groupby(['scenario']).std
 df2 = df2.reset_index()
 df2.columns = ['scenario','mean_travel', 'std_travel']
 
+print(df2)
 
 df3 = pd.DataFrame(data3, columns = ['scenario', 'mean_travel']) 
 df3 = pd.concat([df3.groupby(['scenario']).mean(), df3.groupby(['scenario']).std()], axis=1)
 df3 = df3.reset_index()
 df3.columns = ['scenario','mean_travel', 'std_travel']
 
+print(df3)
 
 df4 = pd.DataFrame(data4, columns = ['scenario', 'mean_travel']) 
 df4 = pd.concat([df4.groupby(['scenario']).mean(), df4.groupby(['scenario']).std()], axis=1)
 df4 = df4.reset_index()
 df4.columns = ['scenario','mean_travel', 'std_travel']
 
+print(df4)
 
 df5 = pd.DataFrame(data5, columns = ['scenario', 'mean_travel']) 
 df5 = pd.concat([df5.groupby(['scenario']).mean(), df5.groupby(['scenario']).std()], axis=1)
 df5 = df5.reset_index()
 df5.columns = ['scenario','mean_travel', 'std_travel']
+
+print(df5)
 
 ax = df2.plot(
     x='scenario',
@@ -302,15 +306,11 @@ df3 = pd.concat([df3.groupby(['scenario']).mean(), df3.groupby(['scenario']).std
 df3 = df3.reset_index()
 df3.columns = ['scenario','mean_travel', 'std_travel']
 
-print(df3)
 
 df4 = pd.DataFrame(data_non_dr4, columns = ['scenario', 'mean_travel']) 
 df4 = pd.concat([df4.groupby(['scenario']).mean(), df4.groupby(['scenario']).std()], axis=1)
 df4 = df4.reset_index()
 df4.columns = ['scenario','mean_travel', 'std_travel']
-
-print(df4)
-
 
 df5 = pd.DataFrame(data_non_dr5, columns = ['scenario', 'mean_travel']) 
 df5 = pd.concat([df5.groupby(['scenario']).mean(), df5.groupby(['scenario']).std()], axis=1)

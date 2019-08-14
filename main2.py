@@ -144,28 +144,20 @@ df2 = pd.concat([df2.groupby(['scenario']).mean(), df2.groupby(['scenario']).std
 df2 = df2.reset_index()
 df2.columns = ['scenario','mean_travel', 'std_travel']
 
-print(df2)
-
 df3 = pd.DataFrame(data3, columns = ['scenario', 'mean_travel']) 
 df3 = pd.concat([df3.groupby(['scenario']).mean(), df3.groupby(['scenario']).std()], axis=1)
 df3 = df3.reset_index()
 df3.columns = ['scenario','mean_travel', 'std_travel']
-
-print(df3)
 
 df4 = pd.DataFrame(data4, columns = ['scenario', 'mean_travel']) 
 df4 = pd.concat([df4.groupby(['scenario']).mean(), df4.groupby(['scenario']).std()], axis=1)
 df4 = df4.reset_index()
 df4.columns = ['scenario','mean_travel', 'std_travel']
 
-print(df4)
-
 df5 = pd.DataFrame(data5, columns = ['scenario', 'mean_travel']) 
 df5 = pd.concat([df5.groupby(['scenario']).mean(), df5.groupby(['scenario']).std()], axis=1)
 df5 = df5.reset_index()
 df5.columns = ['scenario','mean_travel', 'std_travel']
-
-print(df5)
 
 ax = df2.plot(
     x='scenario',
@@ -249,7 +241,7 @@ ax = df2.plot(
     marker='o', 
     yerr='std_travel',
     ylim=(0, None),
-    title='Mean Travel Time for all Vehicles',
+    title='Mean Travel Time for AVs',
     grid=True,
 )
 
@@ -259,7 +251,7 @@ ax = df3.plot(ax=ax,
     marker='o', 
     yerr='std_travel',
     ylim=(0, None),
-    title='Mean Travel Time for all Vehicles',
+    title='Mean Travel Time for AVs',
     grid=True,
 )
 
@@ -269,7 +261,7 @@ ax = df4.plot(ax=ax,
     marker='o', 
     yerr='std_travel',
     ylim=(0, None),
-    title='Mean Travel Time for all Vehicles',
+    title='Mean Travel Time for AVs',
     grid=True,
 )
 
@@ -279,7 +271,7 @@ ax = df5.plot(ax=ax,
     marker='o', 
     yerr='std_travel',
     ylim=(0, None),
-    title='Mean Travel Time for all Vehicles',
+    title='Mean Travel Time for AVs',
     grid=True,
 )
 
@@ -323,7 +315,7 @@ ax = df2.plot(
     marker='o', 
     yerr='std_travel',
     ylim=(0, None),
-    title='Mean Travel Time for all Vehicles',
+    title='Mean Travel Time for Human-driven Vehicles',
     grid=True,
 )
 
@@ -333,7 +325,7 @@ ax = df3.plot(ax=ax,
     marker='o', 
     yerr='std_travel',
     ylim=(0, None),
-    title='Mean Travel Time for all Vehicles',
+    title='Mean Travel Time for Human-driven Vehicles',
     grid=True,
 )
 
@@ -344,7 +336,7 @@ ax = df4.plot(ax=ax,
     marker='o', 
     yerr='std_travel',
     ylim=(0, None),
-    title='Mean Travel Time for all Vehicles',
+    title='Mean Travel Time for Human-driven Vehicles',
     grid=True,
 )
 
@@ -354,7 +346,7 @@ ax = df5.plot(ax=ax,
     marker='o', 
     yerr='std_travel',
     ylim=(0, None),
-    title='Mean Travel Time for all Vehicles',
+    title='Mean Travel Time for Human-driven Vehicles',
     grid=True,
 )
 

@@ -169,7 +169,7 @@ ax = df2.plot(
     marker='o', 
     yerr='std_travel',
     ylim=(0, None),
-    title='Travel time (s) vs. AV ratio (%)',
+    title='Mean Travel Time for all Vehicles',
     grid=True,
 )
 
@@ -179,7 +179,7 @@ ax = df3.plot(ax=ax,
     marker='o', 
     yerr='std_travel',
     ylim=(0, None),
-    title='Travel time (s) vs. AV ratio (%)',
+    title='Mean Travel Time for all Vehicles',
     grid=True,
 )
 
@@ -189,7 +189,7 @@ ax = df4.plot(ax=ax,
     marker='o', 
     yerr='std_travel',
     ylim=(0, None),
-    title='Travel time (s) vs. AV ratio (%)',
+    title='Mean Travel Time for all Vehicles',
     grid=True,
 )
 
@@ -199,7 +199,7 @@ ax = df5.plot(ax=ax,
     marker='o', 
     yerr='std_travel',
     ylim=(0, None),
-    title='Travel time (s) vs. AV ratio (%)',
+    title='Mean Travel Time for all Vehicles',
     grid=True,
 )
 
@@ -209,7 +209,7 @@ cet_std = 53
 ax.hlines(y=cet_mean, xmin=0, xmax=100)
 ax.hlines(y=[cet_mean+2*cet_std, cet_mean-2*cet_std], xmin=0, xmax=100, linestyle='--')
 
-ax.legend(['Mean, no AVs', '95% CI, no AVs', 'Mean, Scenario 2', 'Mean Scenario 3', 'Mean Scenario 4', 'Mean Scenario 5'])
+ax.legend(['Mean, no AVs', 'STD, no AVs', 'Mean, Scenario 2', 'Mean, Scenario 3', 'Mean, Scenario 4', 'Mean, Scenario 5'])
 ax.set_xlabel("AV ratio")
 ax.set_ylabel("Travel Time (s)")
 
@@ -245,7 +245,7 @@ ax = df2.plot(
     marker='o', 
     yerr='std_travel',
     ylim=(0, None),
-    title='Travel time (s) vs. AV ratio (%)',
+    title='Mean Travel Time for all Vehicles',
     grid=True,
 )
 
@@ -255,7 +255,7 @@ ax = df3.plot(ax=ax,
     marker='o', 
     yerr='std_travel',
     ylim=(0, None),
-    title='Travel time (s) vs. AV ratio (%)',
+    title='Mean Travel Time for all Vehicles',
     grid=True,
 )
 
@@ -265,7 +265,7 @@ ax = df4.plot(ax=ax,
     marker='o', 
     yerr='std_travel',
     ylim=(0, None),
-    title='Travel time (s) vs. AV ratio (%)',
+    title='Mean Travel Time for all Vehicles',
     grid=True,
 )
 
@@ -275,7 +275,7 @@ ax = df5.plot(ax=ax,
     marker='o', 
     yerr='std_travel',
     ylim=(0, None),
-    title='Travel time (s) vs. AV ratio (%)',
+    title='Mean Travel Time for all Vehicles',
     grid=True,
 )
 
@@ -283,7 +283,7 @@ ax = df5.plot(ax=ax,
 ax.hlines(y=cet_mean, xmin=0, xmax=100)
 ax.hlines(y=[cet_mean+2*cet_std, cet_mean-2*cet_std], xmin=0, xmax=100, linestyle='--')
 
-ax.legend(['Mean, no AVs', '95% CI, no AVs', 'Mean, Scenario 2', 'Mean Scenario 3', 'Mean Scenario 4', 'Mean Scenario 5'])
+ax.legend(['Mean, no AVs', 'STD CI, no AVs', 'Mean, Scenario 2', 'Mean, Scenario 3', 'Mean, Scenario 4', 'Mean, Scenario 5'])
 ax.set_xlabel("AV ratio")
 ax.set_ylabel("Travel Time (s)")
 
@@ -323,7 +323,7 @@ ax = df2.plot(
     marker='o', 
     yerr='std_travel',
     ylim=(0, None),
-    title='Travel time (s) vs. AV ratio (%)',
+    title='Mean Travel Time for all Vehicles',
     grid=True,
 )
 
@@ -333,7 +333,7 @@ ax = df3.plot(ax=ax,
     marker='o', 
     yerr='std_travel',
     ylim=(0, None),
-    title='Travel time (s) vs. AV ratio (%)',
+    title='Mean Travel Time for all Vehicles',
     grid=True,
 )
 
@@ -344,7 +344,7 @@ ax = df4.plot(ax=ax,
     marker='o', 
     yerr='std_travel',
     ylim=(0, None),
-    title='Travel time (s) vs. AV ratio (%)',
+    title='Mean Travel Time for all Vehicles',
     grid=True,
 )
 
@@ -354,14 +354,14 @@ ax = df5.plot(ax=ax,
     marker='o', 
     yerr='std_travel',
     ylim=(0, None),
-    title='Travel time (s) vs. AV ratio (%)',
+    title='Mean Travel Time for all Vehicles',
     grid=True,
 )
 
 ax.hlines(y=cet_mean, xmin=0, xmax=100)
 ax.hlines(y=[cet_mean+2*cet_std, cet_mean-2*cet_std], xmin=0, xmax=100, linestyle='--')
 
-ax.legend(['Mean, no AVs', '95% CI, no AVs', 'Mean, Scenario 2', 'Mean Scenario 3', 'Mean Scenario 4', 'Mean Scenario 5'])
+ax.legend(['Mean, no AVs', 'STD, no AVs', 'Mean, Scenario 2', 'Mean, Scenario 3', 'Mean, Scenario 4', 'Mean, Scenario 5'])
 ax.set_xlabel("AV ratio")
 ax.set_ylabel("Travel Time (s)")
 
